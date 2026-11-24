@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Nova Tech Trust — tokens de couleur (canaux RGB pour l'opacité Tailwind). */
+:root {
+  /* Thème Papier (par défaut) */
+  --surface-100: 244 244 240;  /* #f4f4f0 */
+  --surface-200: 255 255 255;  /* #ffffff */
+  --surface-300: 232 232 227;  /* #e8e8e3 */
+  --ink: 57 56 55;             /* #393837 */
+  --ink-muted: 92 93 90;       /* #5c5d5a */
+  --border: 216 217 211;       /* #d8d9d3 */
+  --border-strong: 127 128 124;/* #7f807c */
+  --action: 127 77 42;         /* #7f4d2a */
+  --action-hover: 106 63 33;   /* #6a3f21 */
+  --on-action: 255 255 255;
+  --success: 10 106 115;  --success-bg: 220 239 239;
+  --warning: 122 82 0;    --warning-bg: 246 231 196;
+  --danger: 179 38 30;    --danger-bg: 248 220 217;
+  --shadow-sm: 0 1px 2px rgba(36, 36, 33, 0.14);
+  --shadow-md: 0 4px 12px rgba(36, 36, 33, 0.16);
+  --shadow-emboss: inset 0 1px 0 rgba(255, 255, 255, 0.35), 0 1px 2px rgba(36, 36, 33, 0.2);
+  color-scheme: light;
+}
+
+/* Thème Graphite (sombre) */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --surface-100: 28 28 26;   --surface-200: 38 38 36;   --surface-300: 49 49 46;
+    --ink: 240 239 235;        --ink-muted: 182 183 178;
+    --border: 60 60 57;        --border-strong: 141 142 138;
+    --action: 238 191 143;     --action-hover: 243 207 171; --on-action: 36 36 33;
+    --success: 92 198 209;  --success-bg: 20 56 60;
+    --warning: 240 185 74;  --warning-bg: 64 48 12;
+    --danger: 242 139 130;  --danger-bg: 74 31 28;
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.6);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.6);
+    --shadow-emboss: inset 0 1px 0 rgba(255, 255, 255, 0.35), 0 1px 2px rgba(0, 0, 0, 0.6);
+    color-scheme: dark;
+  }
+}
+
+/* Bande en thème Graphite, quel que soit le thème de la page. */
+.theme-graphite {
+    --surface-100: 28 28 26;   --surface-200: 38 38 36;   --surface-300: 49 49 46;
+    --ink: 240 239 235;        --ink-muted: 182 183 178;
+    --border: 60 60 57;        --border-strong: 141 142 138;
+    --action: 238 191 143;     --action-hover: 243 207 171; --on-action: 36 36 33;
+    --success: 92 198 209;  --success-bg: 20 56 60;
+    --warning: 240 185 74;  --warning-bg: 64 48 12;
+    --danger: 242 139 130;  --danger-bg: 74 31 28;
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.6);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.6);
+    --shadow-emboss: inset 0 1px 0 rgba(255, 255, 255, 0.35), 0 1px 2px rgba(0, 0, 0, 0.6);
+    color-scheme: dark;
+  background-color: rgb(var(--surface-100));
+  color: rgb(var(--ink));
+}
+
+html { scroll-behavior: smooth; }
+body { @apply bg-surface-100 text-ink font-sans text-body antialiased; }
+
+@layer components {
+  .container-page { @apply mx-auto w-full max-w-page px-s-4 sm:px-s-6; }
+  .section { @apply scroll-mt-24 py-s-8 sm:py-s-9; }
+  .kicker { @apply font-display text-kicker uppercase text-ink-muted; }
+
+  .btn { @apply inline-flex min-h-[44px] items-center justify-center gap-s-2 rounded-md border border-transparent px-5 py-3 font-display text-[14px] font-semibold leading-4 tracking-[0.02em] no-underline transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-action; }
+  .btn-primary { @apply btn bg-action text-action-on shadow-emboss hover:bg-action-hover; }
+  .btn-secondary { @apply btn border-border-strong bg-surface-200 text-ink hover:bg-surface-300; }
+  .btn-ghost { @apply btn bg-transparent px-s-3 text-action hover:underline; }
+
+  .card { @apply relative overflow-hidden rounded-md border border-border bg-surface-200 p-s-5 shadow-sm; }
+  .link-action { @apply inline-flex items-center gap-1.5 text-body-sm font-semibold text-action hover:underline; }
+  .badge { @apply inline-flex items-center gap-1.5 rounded-pill bg-surface-300 px-2.5 py-1 font-display text-caption font-semibold tracking-[0.04em]; }
+}
+
+/* Motif de la lame : diagonale ~41°, du bas gauche vers le haut droit. Un par composition. */
+.blade {
+  position: absolute; height: 3px; pointer-events: none;
+  background: linear-gradient(90deg, transparent 0%, #eebf8f 12%, #b37b4a 50%, #7f4d2a 88%, transparent 100%);
+  transform: rotate(-41deg); transform-origin: center;
+  box-shadow: 0 0 0 2px rgb(var(--surface-100));
+  border-radius: 999px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
