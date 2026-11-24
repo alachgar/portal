@@ -7,7 +7,7 @@ export default function Footer() {
     <footer className="border-t border-border bg-surface-100">
       <div className="container-page grid gap-s-7 py-s-8 md:grid-cols-[1.4fr_repeat(3,1fr)]">
         <div>
-          <div className="inline-flex rounded-md bg-[#f4f4f0] p-s-2">
+          <div className="logo-shine inline-flex rounded-md bg-[#f4f4f0] p-s-2">
             <Image src="/brand/nova-tech-trust-lockup.png" alt={site.name} width={140} height={108} className="h-auto w-[120px]" loading="eager" />
           </div>
           <p className="mt-s-4 max-w-xs text-body-sm text-ink-muted">{footer.about}</p>
@@ -17,7 +17,7 @@ export default function Footer() {
             <p className="font-display text-label uppercase">{c.title}</p>
             <ul className="mt-s-4 space-y-s-2">
               {c.links.map((l) => (
-                <li key={l.label}><a href={l.href} className="text-body-sm text-ink-muted hover:text-ink hover:underline">{l.label}</a></li>
+                <li key={l.label}><a href={l.href} className="text-body-sm text-ink-muted transition-colors hover:text-action">{l.label}</a></li>
               ))}
             </ul>
           </nav>
