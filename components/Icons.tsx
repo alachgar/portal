@@ -33,3 +33,7 @@ export const Database = ({ className = "h-6 w-6" }: P) => <Svg className={classN
 export const Book = ({ className = "h-6 w-6" }: P) => <Svg className={className}>{L("M4 4h7a2 2 0 0 1 2 2v14a2 2 0 0 0-2-2H4z")}{L("M20 4h-5a2 2 0 0 0-2 2v14a2 2 0 0 1 2-2h5z")}</Svg>;
 export const Chart = ({ className = "h-6 w-6" }: P) => <Svg className={className}>{L("M4 20V4")}{L("M4 20h16")}{L("M8 16v-4M12 16V8M16 16v-6")}</Svg>;
 export const Calculator = ({ className = "h-6 w-6" }: P) => <Svg className={className}>{L("M5 3h14v18H5z")}{L("M8 6h8v3H8z")}{L("M8 13h1M12 13h1M16 13h0M8 17h1M12 17h1M16 13v4")}</Svg>;
+
+// Bibliothèque de prompts
+export const Copy = ({ className = "h-4 w-4" }: P) => <Svg className={className}>{L("M9 9h11v11H9z")}{L("M5 15H4V4h11v1")}</Svg>;
+export const Prompt = ({ className = "h-6 w-6" }: P) => <Svg className={className}>{L("M3 5h18v14H3z")}{L("m7 10 3 2-3 2")}{L("M12 15h5")}</Svg>;
