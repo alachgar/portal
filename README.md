@@ -15,6 +15,7 @@ npm run dev
 | Besoin | Fichier |
 | --- | --- |
 | Textes, offres, FAQ, liens | `content/site.ts` |
+| Bibliothèque de prompts (`/ressources/prompts`) | `content/prompts.ts` |
 | Couleurs des thèmes Papier / Graphite | `app/globals.css` |
 | Typographies, échelle, espacements, rayons | `tailwind.config.ts` |
 | Logos | `public/brand/` |
@@ -28,7 +29,7 @@ npm run dev
 5. Les 5 indicateurs du copilote
 6. Expérience, filtrable par secteur
 7. Engagements (les témoignages s'affichent dès que `testimonials` est rempli)
-8. Ressources
+8. Ressources, avec la bibliothèque de prompts mise en avant (page `/ressources/prompts`)
 9. FAQ en accordéon
 10. Appel à l'action en thème Graphite
 11. Pied de page

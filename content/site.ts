@@ -195,6 +195,15 @@ export const resources = {
   kicker: "Ressources",
   title: "Nos guides pour un PMO augmenté par l'IA",
   lead: "Méthodes, chiffres et retours de terrain, en accès libre.",
+  // Ressource mise en avant : la bibliothèque de prompts (page /ressources/prompts).
+  featured: {
+    label: "Nouveau",
+    title: "Bibliothèque de prompts pour le pilotage de projet",
+    body: "33 prompts prêts à copier pour cadrer, chiffrer, planifier, piloter, faire adopter et clôturer vos projets. Issus de méthodes de conseil éprouvées.",
+    tags: ["Cadrer", "Chiffrer", "Planifier", "Piloter", "Faire adopter", "Clôturer"],
+    href: "/ressources/prompts",
+    cta: "Ouvrir la bibliothèque",
+  },
   items: [
     {
       title: "Playbook IA pour les équipes projet",
@@ -260,16 +269,17 @@ export const footer = {
     {
       title: "Navigation",
       links: [
-        { label: "Offre", href: "#offre" },
-        { label: "Méthode", href: "#methode" },
-        { label: "Indicateurs", href: "#indicateurs" },
-        { label: "Expérience", href: "#experience" },
-        { label: "FAQ", href: "#faq" },
+        { label: "Offre", href: "/#offre" },
+        { label: "Méthode", href: "/#methode" },
+        { label: "Indicateurs", href: "/#indicateurs" },
+        { label: "Expérience", href: "/#experience" },
+        { label: "FAQ", href: "/#faq" },
       ],
     },
     {
       title: "Ressources",
       links: [
+        { label: "Bibliothèque de prompts", href: "/ressources/prompts" },
         { label: "Playbook IA pour les équipes projet", href: "#" },
         { label: "Cas d'usage et ROI", href: "#" },
         { label: "Simulateur de ROI", href: "#" },
